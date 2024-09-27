@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqng523ti3mv"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_136bi"]
+
+[sub_resource type="Environment" id="Environment_04dxv"]
+background_mode = 1
+background_color = Color(0.190762, 0.190762, 0.190762, 1)
+ambient_light_color = Color(0.775063, 0.775063, 0.775063, 1)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_136bi")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_04dxv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+light_energy = 2.5
