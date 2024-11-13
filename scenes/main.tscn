@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://btqng523ti3mv"]
+[gd_scene load_steps=5 format=3 uid="uid://btqng523ti3mv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_136bi"]
+[ext_resource type="Script" path="res://scripts/origin3d.gd" id="2_tq580"]
 
 [sub_resource type="Environment" id="Environment_04dxv"]
 background_mode = 1
-background_color = Color(0.190762, 0.190762, 0.190762, 1)
+background_color = Color(0.136826, 0.136826, 0.136826, 1)
 ambient_light_color = Color(0.775063, 0.775063, 0.775063, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b3d2g"]
+size = Vector3(5, 0.1, 5)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_136bi")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
+script = ExtResource("2_tq580")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 
@@ -19,3 +24,7 @@ environment = SubResource("Environment_04dxv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 light_energy = 2.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164701, -0.37512, 0.243293)
+mesh = SubResource("BoxMesh_b3d2g")
