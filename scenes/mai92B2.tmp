@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://btqng523ti3mv"]
+[gd_scene load_steps=7 format=3 uid="uid://btqng523ti3mv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_136bi"]
-[ext_resource type="PackedScene" uid="uid://cnonehcunt6xd" path="res://scenes/character.tscn" id="2_o30g8"]
+[ext_resource type="Script" path="res://scripts/origin3d.gd" id="2_tq580"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mnykp"]
 
 [sub_resource type="Environment" id="Environment_04dxv"]
 background_mode = 1
@@ -17,23 +19,27 @@ points = PackedVector3Array(-2.5, -0.05, -2.5, -2.5, 0.05, -2.5, 2.5, -0.05, -2.
 [node name="Main" type="Node3D"]
 script = ExtResource("1_136bi")
 
-[node name="Character" parent="." instance=ExtResource("2_o30g8")]
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+script = ExtResource("2_tq580")
+
+[node name="Character" type="CharacterBody3D" parent="XROrigin3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/Character"]
+shape = SubResource("SphereShape3D_mnykp")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_04dxv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.974114, 0, 0.226056, 0, 1, 0, -0.226056, 0, 0.974114, 0, 3, 0)
-light_energy = 5.0
-light_angular_distance = 45.0
+light_energy = 2.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75855, -0.37512, 0.243293)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164701, -0.37512, 0.243293)
 mesh = SubResource("BoxMesh_b3d2g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_nqwg2")
-
-[node name="Pass" type="Node3D" parent="."]

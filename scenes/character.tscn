@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnonehcunt6xd"]
+
+[ext_resource type="Script" path="res://scripts/origin3d.gd" id="1_1g1op"]
+
+[node name="Character" type="XROrigin3D"]
+script = ExtResource("1_1g1op")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
