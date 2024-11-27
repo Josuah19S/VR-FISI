@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://4xlruxsm8uvq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3p1qb"]
+size = Vector3(18, 0.2, 80)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hy7qr"]
+size = Vector3(9, 8, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_e47mq"]
+size = Vector3(0.2, 8, 40)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h5s8s"]
+size = Vector3(0.2, 8, 22)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fbdk7"]
+size = Vector3(0.2, 8, 10)
+
+[node name="Pasadizo-ap1" type="Node3D"]
+
+[node name="pm-f" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3p1qb")
+
+[node name="pm-wf" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 4, 40)
+mesh = SubResource("BoxMesh_hy7qr")
+skeleton = NodePath("../pm-f")
+
+[node name="pm-wl1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4, 12)
+mesh = SubResource("BoxMesh_e47mq")
+
+[node name="pm-wl2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 4, -29)
+mesh = SubResource("BoxMesh_h5s8s")
+
+[node name="pm-wr1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 4, 35)
+mesh = SubResource("BoxMesh_fbdk7")
+
+[node name="pm-r" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+mesh = SubResource("BoxMesh_3p1qb")

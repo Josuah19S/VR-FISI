@@ -1,7 +1,7 @@
 extends XROrigin3D
 
 var sensitivity := 0.005 # Mouse sensititvity
-var speed := 6
+var speed := 10
 
 @onready var cam = $XRCamera3D
 
