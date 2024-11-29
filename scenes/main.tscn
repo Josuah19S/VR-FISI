@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://btqng523ti3mv"]
+[gd_scene load_steps=11 format=3 uid="uid://btqng523ti3mv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_136bi"]
 [ext_resource type="PackedScene" uid="uid://cnonehcunt6xd" path="res://scenes/character.tscn" id="2_o30g8"]
-[ext_resource type="PackedScene" uid="uid://cseh5ef0axcrt" path="res://scenes/environments/entrada-int.tscn" id="3_aioc0"]
-[ext_resource type="PackedScene" uid="uid://4xlruxsm8uvq" path="res://scenes/environments/pasadizo-ap1.tscn" id="4_rh6jq"]
-[ext_resource type="PackedScene" uid="uid://vts1bd8g0enk" path="res://scenes/environments/pasadizo-ap2.tscn" id="5_w3cc1"]
+[ext_resource type="PackedScene" uid="uid://cseh5ef0axcrt" path="res://scenes/environments/1F/1f-ap-entrance.tscn" id="3_aioc0"]
+[ext_resource type="PackedScene" uid="uid://4xlruxsm8uvq" path="res://scenes/environments/1F/1f-ap-corridor1.tscn" id="4_rh6jq"]
+[ext_resource type="PackedScene" uid="uid://bqns5w7uavn07" path="res://scenes/environments/2F/2f-ap-corridor1.tscn" id="5_eqao5"]
+[ext_resource type="PackedScene" uid="uid://vts1bd8g0enk" path="res://scenes/environments/2F/2f-ap-corridor2.tscn" id="5_w3cc1"]
+[ext_resource type="PackedScene" uid="uid://c1nle3a0oqjuh" path="res://scenes/environments/2F/2f-ap-tercio.tscn" id="7_fpikk"]
 
 [sub_resource type="Environment" id="Environment_04dxv"]
 background_mode = 1
@@ -21,6 +23,7 @@ points = PackedVector3Array(-2.5, -0.05, -2.5, -2.5, 0.05, -2.5, 2.5, -0.05, -2.
 script = ExtResource("1_136bi")
 
 [node name="Character" parent="." instance=ExtResource("2_o30g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23253, 4.78292)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_04dxv")
@@ -31,7 +34,7 @@ light_energy = 5.0
 light_angular_distance = 45.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75855, 19.6249, 0.243293)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4431, 19.6249, 0.243293)
 mesh = SubResource("BoxMesh_b3d2g")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -41,10 +44,18 @@ shape = SubResource("ConvexPolygonShape3D_nqwg2")
 
 [node name="1st-floor" type="Node3D" parent="."]
 
-[node name="entrada-int" parent="1st-floor" instance=ExtResource("3_aioc0")]
+[node name="1f-ap-entrance" parent="1st-floor" instance=ExtResource("3_aioc0")]
 
-[node name="Pasadizo-ap1" parent="1st-floor" instance=ExtResource("4_rh6jq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -41)
+[node name="1f-ap-corridor1" parent="1st-floor" instance=ExtResource("4_rh6jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -40.5)
 
-[node name="Pasadizo-ap2" parent="1st-floor" instance=ExtResource("5_w3cc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, -16)
+[node name="2nd-floor" type="Node3D" parent="."]
+
+[node name="2f-ap-corridor1" parent="2nd-floor" instance=ExtResource("5_eqao5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, -40.5)
+
+[node name="2f-ap-corridor2" parent="2nd-floor" instance=ExtResource("5_w3cc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, 6, -16)
+
+[node name="2f-ap-tercio" parent="2nd-floor" instance=ExtResource("7_fpikk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 6, -35)

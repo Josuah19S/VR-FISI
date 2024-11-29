@@ -1,9 +1,9 @@
-extends XROrigin3D
+extends CharacterBody3D
 
-var sensitivity := 0.005 # Mouse sensititvity
-var speed := 10
+var sensitivity := 0.0015 # Mouse sensititvity
+var speed := 5
 
-@onready var cam = $XRCamera3D
+@onready var cam = $XROrigin3D/XRCamera3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # Captura el mouse sin salir de la ventana

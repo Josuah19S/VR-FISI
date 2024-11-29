@@ -1,36 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://cseh5ef0axcrt"]
+[gd_scene load_steps=6 format=3 uid="uid://cseh5ef0axcrt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_rebht"]
-size = Vector3(16, 0.2, 24)
+size = Vector3(14, 0.5, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_e5n1h"]
-size = Vector3(16, 8, 0.2)
+size = Vector3(14, 6, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_scqlt"]
-size = Vector3(0.2, 8, 24)
+size = Vector3(0.5, 6, 20)
 
 [sub_resource type="BoxMesh" id="BoxMesh_37cet"]
-size = Vector3(0.2, 8, 16)
+size = Vector3(0.5, 6, 11)
 
-[node name="Entrada-int" type="Node3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_f02fi"]
+size = Vector3(14, 0.5, 20)
+
+[node name="1f-ap-entrance" type="Node3D"]
 
 [node name="ei-f" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 mesh = SubResource("BoxMesh_rebht")
 
 [node name="ei-wb" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
 mesh = SubResource("BoxMesh_e5n1h")
 skeleton = NodePath("../..")
 
 [node name="ei-wl" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75, 3, 0)
 mesh = SubResource("BoxMesh_scqlt")
 
 [node name="ei-wr" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 4, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 3, 4.5)
 mesh = SubResource("BoxMesh_37cet")
 
 [node name="ei-r" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 3)
-mesh = SubResource("BoxMesh_rebht")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 0)
+mesh = SubResource("BoxMesh_f02fi")

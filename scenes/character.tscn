@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnonehcunt6xd"]
+[gd_scene load_steps=4 format=3 uid="uid://cnonehcunt6xd"]
 
-[ext_resource type="Script" path="res://scripts/origin3d.gd" id="1_1g1op"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_tkoyy"]
 
-[node name="Character" type="XROrigin3D"]
-script = ExtResource("1_1g1op")
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0s0xy"]
+height = 1.7
 
-[node name="XRCamera3D" type="XRCamera3D" parent="."]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hw34k"]
+height = 1.7
+
+[node name="Character" type="CharacterBody3D"]
+script = ExtResource("1_tkoyy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0s0xy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hw34k")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.2)
+current = true
+fov = 50.0
+far = 500.0

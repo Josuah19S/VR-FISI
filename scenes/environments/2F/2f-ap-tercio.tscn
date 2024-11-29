@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1nle3a0oqjuh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hanbh"]
+size = Vector3(10, 0.5, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_min5f"]
+size = Vector3(10, 6, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_be25b"]
+size = Vector3(0.5, 6, 32)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x7qvm"]
+size = Vector3(6, 6, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yt6c4"]
+size = Vector3(10, 0.5, 16)
+
+[node name="2f-ap-tercio" type="Node3D"]
+
+[node name="f" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("BoxMesh_hanbh")
+
+[node name="wb1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -16)
+mesh = SubResource("BoxMesh_min5f")
+skeleton = NodePath("../f")
+
+[node name="wl1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75, 3, 0)
+mesh = SubResource("BoxMesh_be25b")
+
+[node name="wm2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 3, 0.25)
+mesh = SubResource("BoxMesh_x7qvm")
+
+[node name="wr1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75, 3, 0)
+mesh = SubResource("BoxMesh_be25b")
+
+[node name="r" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 8)
+mesh = SubResource("BoxMesh_yt6c4")
