@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://4xlruxsm8uvq"]
+
+[node name="AP1F-corridor1" type="Node3D"]
+
+[node name="f" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+use_collision = true
+size = Vector3(16, 0.5, 80)
+
+[node name="r" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 0)
+use_collision = true
+size = Vector3(16, 0.5, 80)

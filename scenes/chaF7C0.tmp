@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_tkoyy"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_0n5ho"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0s0xy"]
 height = 1.7
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hw34k"]
@@ -11,9 +11,8 @@ height = 1.7
 [node name="Character" type="CharacterBody3D"]
 script = ExtResource("1_tkoyy")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-use_collision = true
-mesh = SubResource("CapsuleMesh_0n5ho")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0s0xy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hw34k")

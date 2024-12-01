@@ -2,22 +2,18 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_136bi"]
 [ext_resource type="PackedScene" uid="uid://cnonehcunt6xd" path="res://scenes/character.tscn" id="2_o30g8"]
-[ext_resource type="PackedScene" uid="uid://cseh5ef0axcrt" path="res://scenes/environments/1F/1f-ap-entrance.tscn" id="3_aioc0"]
-[ext_resource type="PackedScene" uid="uid://4xlruxsm8uvq" path="res://scenes/environments/1F/1f-ap-corridor1.tscn" id="4_rh6jq"]
-[ext_resource type="PackedScene" uid="uid://bqns5w7uavn07" path="res://scenes/environments/2F/2f-ap-corridor1.tscn" id="5_eqao5"]
-[ext_resource type="PackedScene" uid="uid://vts1bd8g0enk" path="res://scenes/environments/2F/2f-ap-corridor2.tscn" id="5_w3cc1"]
-[ext_resource type="PackedScene" uid="uid://c1nle3a0oqjuh" path="res://scenes/environments/2F/2f-ap-tercio.tscn" id="7_fpikk"]
+[ext_resource type="PackedScene" uid="uid://cseh5ef0axcrt" path="res://scenes/environments/1F/AP1F-entrance.tscn" id="3_aioc0"]
+[ext_resource type="PackedScene" uid="uid://4xlruxsm8uvq" path="res://scenes/environments/1F/AP1F-corridor1.tscn" id="4_rh6jq"]
+[ext_resource type="PackedScene" uid="uid://bqns5w7uavn07" path="res://scenes/environments/2F/AP2F-corridor1.tscn" id="5_eqao5"]
+[ext_resource type="PackedScene" uid="uid://vts1bd8g0enk" path="res://scenes/environments/2F/AP2F-corridor2.tscn" id="5_w3cc1"]
+[ext_resource type="PackedScene" uid="uid://c1nle3a0oqjuh" path="res://scenes/environments/2F/AP2F-tercio.tscn" id="7_fpikk"]
+[ext_resource type="PackedScene" uid="uid://cv3fwjiqxia7l" path="res://scenes/environments/1F/AP1F-109.tscn" id="8_0ncvp"]
+[ext_resource type="PackedScene" uid="uid://cp6pyonnsyru3" path="res://scenes/environments/1F/AP1F-101.tscn" id="8_3n6pn"]
 
 [sub_resource type="Environment" id="Environment_04dxv"]
 background_mode = 1
 background_color = Color(0.136826, 0.136826, 0.136826, 1)
 ambient_light_color = Color(0.775063, 0.775063, 0.775063, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_b3d2g"]
-size = Vector3(5, 0.1, 5)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nqwg2"]
-points = PackedVector3Array(-2.5, -0.05, -2.5, -2.5, 0.05, -2.5, 2.5, -0.05, -2.5, -2.5, -0.05, 2.5, -2.5, 0.05, 2.5, 2.5, 0.05, -2.5, 2.5, -0.05, 2.5, 2.5, 0.05, 2.5)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_136bi")
@@ -33,29 +29,32 @@ transform = Transform3D(0.974114, 0, 0.226056, 0, 1, 0, -0.226056, 0, 0.974114, 
 light_energy = 5.0
 light_angular_distance = 45.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4431, 19.6249, 0.243293)
-mesh = SubResource("BoxMesh_b3d2g")
+[node name="1rs-floor" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="AP1F-entrance" parent="1rs-floor" instance=ExtResource("3_aioc0")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_nqwg2")
-
-[node name="1st-floor" type="Node3D" parent="."]
-
-[node name="1f-ap-entrance" parent="1st-floor" instance=ExtResource("3_aioc0")]
-
-[node name="1f-ap-corridor1" parent="1st-floor" instance=ExtResource("4_rh6jq")]
+[node name="AP1F-corridor1" parent="1rs-floor" instance=ExtResource("4_rh6jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -40.5)
+
+[node name="AP1F-101" parent="1rs-floor" instance=ExtResource("8_3n6pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -11)
+
+[node name="AP1F-209" parent="1rs-floor" instance=ExtResource("8_0ncvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -31)
 
 [node name="2nd-floor" type="Node3D" parent="."]
 
-[node name="2f-ap-corridor1" parent="2nd-floor" instance=ExtResource("5_eqao5")]
+[node name="AP2F-corridor1" parent="2nd-floor" instance=ExtResource("5_eqao5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, -40.5)
 
-[node name="2f-ap-corridor2" parent="2nd-floor" instance=ExtResource("5_w3cc1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, 6, -16)
+[node name="AP2F-corridor2" parent="2nd-floor" instance=ExtResource("5_w3cc1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, 6, -21)
 
-[node name="2f-ap-tercio" parent="2nd-floor" instance=ExtResource("7_fpikk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 6, -35)
+[node name="AP2F-tercio" parent="2nd-floor" instance=ExtResource("7_fpikk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 6, -40)
+
+[node name="AP2F-201" parent="2nd-floor" instance=ExtResource("8_3n6pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 6, -11)
+
+[node name="AP2F-213" parent="2nd-floor" instance=ExtResource("8_0ncvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 6, -31)

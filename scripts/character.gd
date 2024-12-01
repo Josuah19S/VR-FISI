@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 var sensitivity := 0.0015 # Mouse sensititvity
-var speed := 5
+var speed := 10
 
 @onready var cam = $XROrigin3D/XRCamera3D
 
