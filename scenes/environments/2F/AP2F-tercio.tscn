@@ -10,7 +10,7 @@ size = Vector3(2.5, 4.5, 0.5)
 size = Vector3(3, 4.5, 0.5)
 
 [sub_resource type="PrismMesh" id="PrismMesh_8ydyv"]
-size = Vector3(10, 2, 16)
+size = Vector3(10, 2, 18)
 
 [node name="AP2F-tercio" type="Node3D"]
 
@@ -107,7 +107,7 @@ use_collision = true
 size = Vector3(10, 0.5, 16)
 
 [node name="roof2" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -7)
 calculate_tangents = false
 use_collision = true
 mesh = SubResource("PrismMesh_8ydyv")

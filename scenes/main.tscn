@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://btqng523ti3mv"]
+[gd_scene load_steps=24 format=3 uid="uid://btqng523ti3mv"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_136bi"]
 [ext_resource type="PackedScene" uid="uid://cnonehcunt6xd" path="res://scenes/character.tscn" id="2_o30g8"]
@@ -6,9 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://4xlruxsm8uvq" path="res://scenes/environments/1F/AP1F-corridor1.tscn" id="4_rh6jq"]
 [ext_resource type="PackedScene" uid="uid://bqns5w7uavn07" path="res://scenes/environments/2F/AP2F-corridor1.tscn" id="5_eqao5"]
 [ext_resource type="PackedScene" uid="uid://vts1bd8g0enk" path="res://scenes/environments/2F/AP2F-corridor2.tscn" id="5_w3cc1"]
+[ext_resource type="PackedScene" uid="uid://qntd73uubopu" path="res://scenes/environments/1F/AP1F-corridor2.tscn" id="7_a8h3i"]
 [ext_resource type="PackedScene" uid="uid://c1nle3a0oqjuh" path="res://scenes/environments/2F/AP2F-tercio.tscn" id="7_fpikk"]
 [ext_resource type="PackedScene" uid="uid://cv3fwjiqxia7l" path="res://scenes/environments/1F/AP1F-109.tscn" id="8_0ncvp"]
 [ext_resource type="PackedScene" uid="uid://cp6pyonnsyru3" path="res://scenes/environments/1F/AP1F-101.tscn" id="8_3n6pn"]
+[ext_resource type="PackedScene" uid="uid://dpcjxlpfg6lqi" path="res://scenes/environments/2F/AP2F-magna.tscn" id="10_1rss5"]
+[ext_resource type="PackedScene" uid="uid://dbqyg6k625kcv" path="res://scenes/environments/2F/AP2F-corridor3.tscn" id="10_i6luf"]
+[ext_resource type="PackedScene" uid="uid://bjd8sluody3qh" path="res://scenes/environments/2F/AP2F-209.tscn" id="10_ncyrr"]
+[ext_resource type="PackedScene" uid="uid://cr6typ1huyqgx" path="res://scenes/environments/2F/AP2F-207.tscn" id="11_4kkv8"]
+[ext_resource type="PackedScene" uid="uid://dr6rw286vbemg" path="res://scenes/environments/2F/AP2F-202.tscn" id="11_oko8s"]
+[ext_resource type="PackedScene" uid="uid://ceq1p56mfpfop" path="res://scenes/environments/2F/AP2F-208.tscn" id="12_twuy4"]
+[ext_resource type="PackedScene" uid="uid://bheam3xo15nbp" path="res://scenes/environments/2F/AP2F-203.tscn" id="13_bdkoo"]
+[ext_resource type="PackedScene" uid="uid://5cpqhtc04kj3" path="res://scenes/environments/2F/AP2F-204.tscn" id="14_fog5y"]
+[ext_resource type="PackedScene" uid="uid://g8fjr73j1git" path="res://scenes/environments/2F/AP2F-206.tscn" id="15_t04ea"]
+[ext_resource type="PackedScene" uid="uid://c2xh0hm7xhm7j" path="res://scenes/environments/2F/AP2F-210.tscn" id="19_q5g5x"]
+[ext_resource type="PackedScene" uid="uid://bbg8a6wt7qtvm" path="res://scenes/environments/2F/AP2F-211.tscn" id="20_6w7i2"]
+[ext_resource type="PackedScene" uid="uid://cd38nrhew0sj8" path="res://scenes/environments/2F/AP2F-Digitalizacion.tscn" id="20_342os"]
 
 [sub_resource type="Environment" id="Environment_04dxv"]
 background_mode = 1
@@ -36,10 +49,13 @@ light_angular_distance = 45.0
 [node name="AP1F-corridor1" parent="1rs-floor" instance=ExtResource("4_rh6jq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -40.5)
 
+[node name="AP1F-corridor2" parent="1rs-floor" instance=ExtResource("7_a8h3i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79, 0, -21)
+
 [node name="AP1F-101" parent="1rs-floor" instance=ExtResource("8_3n6pn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -11)
 
-[node name="AP1F-209" parent="1rs-floor" instance=ExtResource("8_0ncvp")]
+[node name="AP1F-109" parent="1rs-floor" instance=ExtResource("8_0ncvp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -31)
 
 [node name="2nd-floor" type="Node3D" parent="."]
@@ -50,11 +66,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, -40.5)
 [node name="AP2F-corridor2" parent="2nd-floor" instance=ExtResource("5_w3cc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, 6, -21)
 
+[node name="AP2F-corridor3" parent="2nd-floor" instance=ExtResource("10_i6luf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 6, -11)
+
 [node name="AP2F-tercio" parent="2nd-floor" instance=ExtResource("7_fpikk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 6, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 6, -40)
 
 [node name="AP2F-201" parent="2nd-floor" instance=ExtResource("8_3n6pn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 6, -11)
 
+[node name="AP2F-202" parent="2nd-floor" instance=ExtResource("11_oko8s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 6, -11)
+
+[node name="AP2F-203" parent="2nd-floor" instance=ExtResource("13_bdkoo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 6, -11)
+
+[node name="AP2F-204" parent="2nd-floor" instance=ExtResource("14_fog5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.5, 6, -11)
+
+[node name="AP2F-205" parent="2nd-floor" instance=ExtResource("13_bdkoo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93, 6, -11)
+
+[node name="AP2F-206" parent="2nd-floor" instance=ExtResource("15_t04ea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 6, -11)
+
+[node name="AP2F-207" parent="2nd-floor" instance=ExtResource("11_4kkv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 6, -10)
+
+[node name="AP2F-208" parent="2nd-floor" instance=ExtResource("12_twuy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153, 6, -10)
+
+[node name="AP2F-209" parent="2nd-floor" instance=ExtResource("10_ncyrr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 6, -31)
+
+[node name="AP2F-210" parent="2nd-floor" instance=ExtResource("19_q5g5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 6, -31)
+
+[node name="AP2F-211" parent="2nd-floor" instance=ExtResource("20_6w7i2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 6, -31)
+
+[node name="AP2F-212" parent="2nd-floor" instance=ExtResource("19_q5g5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 6, -31)
+
+[node name="AP2F-Digitalizacion" parent="2nd-floor" instance=ExtResource("20_342os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 6, -31)
+
 [node name="AP2F-213" parent="2nd-floor" instance=ExtResource("8_0ncvp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 6, -31)
+
+[node name="AP2F-magna" parent="2nd-floor" instance=ExtResource("10_1rss5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147, 6, -31)

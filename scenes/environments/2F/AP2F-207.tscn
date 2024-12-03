@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr6typ1huyqgx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n5l4q"]
+size = Vector3(12, 6, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lqie5"]
+size = Vector3(3, 4.5, 0.5)
+
+[node name="AP2F-207" type="Node3D"]
+
+[node name="floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+use_collision = true
+size = Vector3(12, 0.5, 16)
+
+[node name="wb" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.75)
+use_collision = true
+
+[node name="wbb" type="CSGMesh3D" parent="wb"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("BoxMesh_n5l4q")
+
+[node name="wbd" type="CSGMesh3D" parent="wb"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.75, 0)
+operation = 2
+mesh = SubResource("BoxMesh_lqie5")
+
+[node name="wl" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75, 3, 0)
+use_collision = true
+size = Vector3(0.5, 6, 16)
+
+[node name="wr" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 3, 0)
+use_collision = true
+size = Vector3(0.5, 6, 16)
+
+[node name="wf" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.75)
+use_collision = true
+
+[node name="wff" type="CSGBox3D" parent="wf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+use_collision = true
+size = Vector3(12, 6, 0.5)
+
+[node name="wfwl" type="CSGBox3D" parent="wf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 3.5, 0)
+operation = 2
+use_collision = true
+size = Vector3(4.5, 3, 0.5)
+
+[node name="wfwr" type="CSGBox3D" parent="wf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 3.5, 0)
+operation = 2
+use_collision = true
+size = Vector3(4.5, 3, 0.5)
+
+[node name="roof" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 0)
+use_collision = true
+size = Vector3(12, 0.5, 16)
