@@ -6,7 +6,7 @@ size = Vector3(10, 6, 0.5)
 [sub_resource type="BoxMesh" id="BoxMesh_lqie5"]
 size = Vector3(3, 4.5, 0.5)
 
-[node name="AP2F-Digitalizacion" type="Node3D"]
+[node name="AP2F-digitalizacion" type="Node3D"]
 
 [node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
