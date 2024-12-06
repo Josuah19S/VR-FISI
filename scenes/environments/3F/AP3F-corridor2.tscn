@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://hqtmnfub2jnu"]
+[gd_scene load_steps=3 format=3 uid="uid://hqtmnfub2jnu"]
+
+[ext_resource type="Material" uid="uid://d0gmefb4w27d3" path="res://assets/materials/floor.tres" id="1_4m12l"]
+[ext_resource type="Material" uid="uid://btciec4bw8wqf" path="res://assets/materials/wall.tres" id="2_xrekg"]
 
 [node name="AP1F-corridor2" type="Node3D"]
 
@@ -6,6 +9,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 use_collision = true
 size = Vector3(112, 0.5, 6)
+material = ExtResource("1_4m12l")
 
 [node name="wr" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.75, 3, 0)
@@ -15,3 +19,4 @@ size = Vector3(0.5, 6, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 0)
 use_collision = true
 size = Vector3(112, 0.5, 6)
+material = ExtResource("2_xrekg")

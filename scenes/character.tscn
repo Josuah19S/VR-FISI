@@ -4,9 +4,10 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0n5ho"]
 radius = 1.0
-height = 3.4
+height = 4.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hw34k"]
+radius = 0.85
 height = 1.7
 
 [node name="Character" type="CharacterBody3D"]
@@ -20,7 +21,7 @@ mesh = SubResource("CapsuleMesh_0n5ho")
 shape = SubResource("CapsuleShape3D_hw34k")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, -0.5)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0.2)

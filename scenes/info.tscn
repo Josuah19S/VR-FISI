@@ -1,22 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cah8yaljokdi1"]
+[gd_scene load_steps=3 format=3 uid="uid://dglr1wuy8b5h6"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_0k6yu"]
-[ext_resource type="Texture2D" uid="uid://duoa6hbks650f" path="res://assets/screens/menu.png" id="2_lr0ke"]
+[ext_resource type="Script" path="res://scripts/info.gd" id="1_2fjc8"]
+[ext_resource type="Texture2D" uid="uid://ud1r8dr03a7k" path="res://assets/screens/info.png" id="2_t0ier"]
 
-[node name="Menu" type="Control"]
+[node name="Info" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0k6yu")
+script = ExtResource("1_2fjc8")
 
 [node name="img" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("2_lr0ke")
+texture = ExtResource("2_t0ier")
 
-[node name="Xplore" type="Button" parent="."]
+[node name="Start" type="Button" parent="."]
 layout_mode = 0
 offset_left = 480.0
 offset_top = 608.0
@@ -30,13 +30,13 @@ offset_top = 35.0
 offset_right = 1245.0
 offset_bottom = 110.0
 
-[node name="Quit" type="Button" parent="."]
+[node name="Back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 35.0
 offset_right = 110.0
 offset_bottom = 110.0
 
-[connection signal="pressed" from="Xplore" to="." method="_on_xplore_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://fsm06muevxrl"]
+[gd_scene load_steps=5 format=3 uid="uid://fsm06muevxrl"]
+
+[ext_resource type="Material" uid="uid://d0gmefb4w27d3" path="res://assets/materials/floor.tres" id="1_ywvy3"]
+[ext_resource type="Material" uid="uid://btciec4bw8wqf" path="res://assets/materials/wall.tres" id="2_qfg4k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fghmf"]
 size = Vector3(22, 6, 0.5)
@@ -12,10 +15,12 @@ size = Vector3(3, 4.5, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 use_collision = true
 size = Vector3(22, 0.5, 14)
+material = ExtResource("1_ywvy3")
 
 [node name="platform" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.25, 0.75, 0)
-size = Vector3(2.5, 0.5, 14)
+size = Vector3(2.5, 0.5, 13.5)
+material = ExtResource("1_ywvy3")
 
 [node name="wb" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.75)
@@ -25,6 +30,7 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 use_collision = true
 size = Vector3(22, 6, 0.5)
+material = ExtResource("2_qfg4k")
 
 [node name="wbwl" type="CSGBox3D" parent="wb"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3.5, 0)
@@ -48,11 +54,13 @@ size = Vector3(5, 3, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.75, 3, 0)
 use_collision = true
 size = Vector3(0.5, 6, 14)
+material = ExtResource("2_qfg4k")
 
 [node name="wr" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.75, 3, 0)
 use_collision = true
 size = Vector3(0.5, 6, 14)
+material = ExtResource("2_qfg4k")
 
 [node name="wf" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.75)
@@ -61,6 +69,7 @@ use_collision = true
 [node name="wff" type="CSGMesh3D" parent="wf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("BoxMesh_fghmf")
+material = ExtResource("2_qfg4k")
 
 [node name="wfd" type="CSGMesh3D" parent="wf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.75, 0)
@@ -71,3 +80,4 @@ mesh = SubResource("BoxMesh_ewec1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 0)
 use_collision = true
 size = Vector3(22, 0.5, 14)
+material = ExtResource("2_qfg4k")

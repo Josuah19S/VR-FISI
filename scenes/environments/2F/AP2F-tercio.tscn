@@ -1,4 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1nle3a0oqjuh"]
+[gd_scene load_steps=8 format=3 uid="uid://c1nle3a0oqjuh"]
+
+[ext_resource type="Material" uid="uid://d0gmefb4w27d3" path="res://assets/materials/floor.tres" id="1_8eajk"]
+[ext_resource type="Material" uid="uid://btciec4bw8wqf" path="res://assets/materials/wall.tres" id="2_46hyr"]
+[ext_resource type="Material" uid="uid://bu2kuk3pol1oh" path="res://assets/materials/wood.tres" id="3_ey48i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_85a7o"]
 size = Vector3(10, 6, 0.5)
@@ -18,6 +22,7 @@ size = Vector3(10, 2, 18)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 use_collision = true
 size = Vector3(10, 0.5, 32)
+material = ExtResource("1_8eajk")
 
 [node name="wb" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15.75)
@@ -27,6 +32,7 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 use_collision = true
 size = Vector3(10, 6, 0.5)
+material = ExtResource("2_46hyr")
 
 [node name="wbw" type="CSGBox3D" parent="wb"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
@@ -42,6 +48,7 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 use_collision = true
 size = Vector3(0.5, 6, 32)
+material = ExtResource("2_46hyr")
 
 [node name="ww1" type="CSGBox3D" parent="wl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -4)
@@ -61,6 +68,7 @@ use_collision = true
 [node name="wmm" type="CSGMesh3D" parent="wm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("BoxMesh_85a7o")
+material = ExtResource("2_46hyr")
 
 [node name="wmd" type="CSGMesh3D" parent="wm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2.75, 0)
@@ -75,6 +83,7 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 use_collision = true
 size = Vector3(0.5, 6, 32)
+material = ExtResource("2_46hyr")
 
 [node name="ww1" type="CSGBox3D" parent="wr"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -4)
@@ -95,6 +104,7 @@ use_collision = true
 [node name="wff" type="CSGMesh3D" parent="wf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = SubResource("BoxMesh_85a7o")
+material = ExtResource("2_46hyr")
 
 [node name="wfd" type="CSGMesh3D" parent="wf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.75, 0)
@@ -105,9 +115,11 @@ mesh = SubResource("BoxMesh_6hpr8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 8)
 use_collision = true
 size = Vector3(10, 0.5, 16)
+material = ExtResource("2_46hyr")
 
 [node name="roof2" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -7)
 calculate_tangents = false
 use_collision = true
 mesh = SubResource("PrismMesh_8ydyv")
+material = ExtResource("3_ey48i")
