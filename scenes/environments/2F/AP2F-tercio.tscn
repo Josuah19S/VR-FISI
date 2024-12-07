@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1nle3a0oqjuh"]
+[gd_scene load_steps=9 format=3 uid="uid://c1nle3a0oqjuh"]
 
 [ext_resource type="Material" uid="uid://d0gmefb4w27d3" path="res://assets/materials/floor.tres" id="1_8eajk"]
 [ext_resource type="Material" uid="uid://btciec4bw8wqf" path="res://assets/materials/wall.tres" id="2_46hyr"]
 [ext_resource type="Material" uid="uid://bu2kuk3pol1oh" path="res://assets/materials/wood.tres" id="3_ey48i"]
+[ext_resource type="PackedScene" uid="uid://cq1cg4eh1xy3v" path="res://scenes/assets/board.tscn" id="4_m8xgh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_85a7o"]
 size = Vector3(10, 6, 0.5)
@@ -123,3 +124,9 @@ calculate_tangents = false
 use_collision = true
 mesh = SubResource("PrismMesh_8ydyv")
 material = ExtResource("3_ey48i")
+
+[node name="Boardl" parent="." instance=ExtResource("4_m8xgh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 6.5)
+
+[node name="Boardr" parent="." instance=ExtResource("4_m8xgh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.5, 0, 6.5)

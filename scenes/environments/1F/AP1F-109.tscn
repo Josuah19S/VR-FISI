@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv3fwjiqxia7l"]
+[gd_scene load_steps=6 format=3 uid="uid://cv3fwjiqxia7l"]
 
 [ext_resource type="Material" uid="uid://d0gmefb4w27d3" path="res://assets/materials/floor.tres" id="1_oowg6"]
 [ext_resource type="Material" uid="uid://btciec4bw8wqf" path="res://assets/materials/wall.tres" id="2_e65jk"]
+[ext_resource type="PackedScene" uid="uid://cq1cg4eh1xy3v" path="res://scenes/assets/board.tscn" id="3_kvgyu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fghmf"]
 size = Vector3(20, 6, 0.5)
@@ -77,3 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.75, 0)
 use_collision = true
 size = Vector3(20, 0.5, 14)
 material = ExtResource("2_e65jk")
+
+[node name="Board" parent="." instance=ExtResource("3_kvgyu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 9.5, 0, 0)

@@ -28,13 +28,13 @@ func _physics_process(delta):
 
 	# Movimiento en XZ
 	var dir = Vector3.ZERO
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_forward"):
 		dir -= cam.transform.basis.z
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_backward"):
 		dir += cam.transform.basis.z
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		dir -= cam.transform.basis.x
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		dir += cam.transform.basis.x
 
 	if dir != Vector3.ZERO:

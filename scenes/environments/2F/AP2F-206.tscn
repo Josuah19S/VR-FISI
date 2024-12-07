@@ -20,7 +20,7 @@ size = Vector3(20, 0.5, 14)
 material = ExtResource("1_p05y8")
 
 [node name="p" type="CSGBox3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.25, 0.75, 0)
 size = Vector3(2.5, 0.5, 13.5)
 material = ExtResource("1_p05y8")
 
